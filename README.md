@@ -1,0 +1,1 @@
+# work-scala-CopyByEachEnv
