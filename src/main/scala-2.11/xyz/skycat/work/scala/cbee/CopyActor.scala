@@ -15,14 +15,8 @@ class CopyActor(copy: Copy) extends Actor {
 
   override def receive: Receive = {
     case "start" => {
-      var fromPath = Path(copy.from.dir + copy.from.file).toAbsolute
-      println(fromPath)
-      copy.toList.foreach {
-        to => {
-          val toPath = Path(to.dir + to.file).toAbsolute
-          fromPath.copyTo(toPath, replaceExisting = true)
-        }
-      }
+      val copyExecutor = CopyExecutor(Path(copy.from.dir + copy.from.file).toAbsolute)
+      copy.toList.foreach(to => copyExecutor.modifiedCopy(Path(to.dir + to.file).toAbsolute))
     }
     case _ => {
       // Nothing
