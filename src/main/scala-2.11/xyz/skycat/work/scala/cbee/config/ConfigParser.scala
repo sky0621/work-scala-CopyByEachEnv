@@ -1,4 +1,4 @@
-package config
+package xyz.skycat.work.scala.cbee.config
 
 import scala.xml.XML
 

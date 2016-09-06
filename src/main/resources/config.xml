@@ -2,11 +2,11 @@
 <config>
     <copy>
         <from>
-            <dir>sample\\from\\</dir>
+            <dir>sample/from/</dir>
             <file>sample.properties</file>
         </from>
         <to>
-            <dir>sample\\to01\\</dir>
+            <dir>sample/to01/</dir>
             <file>sample.properties</file>
             <convert>
                 <from>returnPath=returnPath@example.jp</from>
@@ -18,18 +18,18 @@
             </convert>
         </to>
         <to>
-            <dir>sample\\to02\\</dir>
+            <dir>sample/to02/</dir>
             <file>sampleB.properties</file>
         </to>
     </copy>
     <copy>
         <from>
-            <dir>sample\\from\\</dir>
+            <dir>sample/from/</dir>
             <file>sample2.properties</file>
         </from>
         <to>
-            <dir>sample\\to01\\</dir>
-            <file>sample.properties</file>
+            <dir>sample/to01/</dir>
+            <file>sample2b.properties</file>
             <convert>
                 <from>returnPath=returnPath@example.jp</from>
                 <to>returnPath=convert2@example.jp</to>

@@ -1,6 +1,7 @@
-import actor.CopyActor
+package xyz.skycat.work.scala.cbee
+
 import akka.actor.{ActorRef, ActorSystem, Props}
-import config.{Config, ConfigParser}
+import xyz.skycat.work.scala.cbee.config.{Config, ConfigParser}
 
 /**
   * Created by SS on 2016/09/05.
