@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <copy>
+        <from>
+            <dir>sample\\from\\</dir>
+            <file>sample.properties</file>
+        </from>
+        <to>
+            <dir>sample\\to01\\</dir>
+            <file>sample.properties</file>
+            <convert>
+                <from>value2</from>
+                <to>value1</to>
+            </convert>
+            <convert>
+                <from>key2</from>
+                <to>key1</to>
+            </convert>
+        </to>
+        <to>
+            <dir>sample\\to02\\</dir>
+            <file>sampleB.properties</file>
+        </to>
+    </copy>
+    <copy>
+        <from>
+            <dir>sample\\from\\</dir>
+            <file>sample2.properties</file>
+        </from>
+        <to>
+            <dir>sample\\to01\\</dir>
+            <file>sample.properties</file>
+            <convert>
+                <from>value2</from>
+                <to>value1</to>
+            </convert>
+        </to>
+    </copy>
+</config>
