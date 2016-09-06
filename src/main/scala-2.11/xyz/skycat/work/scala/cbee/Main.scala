@@ -9,13 +9,10 @@ import xyz.skycat.work.scala.cbee.config.{Config, ConfigParser}
 object Main extends App {
 
   val config: Config = ConfigParser().generateConfig()
-
   val system = ActorSystem("copySystem")
 
   var actorList = List[ActorRef]()
-  config.copyList.foreach {
-    copy => actorList = actorList :+ system.actorOf(Props(classOf[CopyActor], copy), name = "copyActor" + actorList.size)
-  }
+  config.copyList.foreach(copy => actorList = actorList :+ system.actorOf(Props(classOf[CopyActor], CopyExecutor(copy)), name = "copyActor" + actorList.size))
 
   while (true) {
     actorList.foreach { actor => actor ! "start" }
