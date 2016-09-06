@@ -1,3 +1,5 @@
+import actor.CopyActor
+import akka.actor.{ActorRef, ActorSystem, Props}
 import config.{Config, ConfigParser}
 
 /**
@@ -9,6 +11,16 @@ object Main extends App {
   // コピーの開始（終了？）をメッセージとしてやりとりするAkkaのアクターロジックを実装
 
   val config: Config = ConfigParser().generateConfig()
-  println(config)
 
+  val system = ActorSystem("copySystem")
+
+  var actorList = List[ActorRef]()
+  config.copyList.foreach {
+    copy => actorList = actorList :+ system.actorOf(Props(classOf[CopyActor], copy), name = "copyActor" + actorList.size)
+  }
+
+  while (true) {
+    actorList.foreach { actor => actor ! "start" }
+    Thread.sleep(5000)
+  }
 }

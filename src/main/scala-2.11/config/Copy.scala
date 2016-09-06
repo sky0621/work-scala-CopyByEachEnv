@@ -5,7 +5,7 @@ import scala.xml.NodeSeq
 /**
   * Created by SS on 2016/09/06.
   */
-class Copy private(copyNode: NodeSeq) {
+case class Copy private(copyNode: NodeSeq) {
 
   val from = CopyFrom(copyNode \ "from")
 
@@ -13,8 +13,4 @@ class Copy private(copyNode: NodeSeq) {
   (copyNode \ "to").foreach {
     to => toList = toList :+ CopyTo(to)
   }
-}
-
-object Copy {
-  def apply(copyNode: NodeSeq) = new Copy(copyNode)
 }
