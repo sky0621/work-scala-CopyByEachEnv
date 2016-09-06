@@ -7,26 +7,9 @@ import scala.xml.Elem
   */
 class Config private(configXml: Elem) {
 
-  private var copyList: List[Copy] = List()
-
+  var copyList: List[Copy] = List()
   ((configXml \ "copy").theSeq).foreach {
-    copy => {
-      var copyObj: Copy = new Copy()
-      this.copyList = this.copyList :+ copyObj
-      (copy \ "from").foreach {
-        from => {
-          var fromObj: CopyFrom = new CopyFrom()
-          copyObj.from = fromObj
-
-        }
-      }
-      (copy \ "to").foreach {
-        to => {
-          var toObj: CopyTo = new CopyTo()
-          copyObj.toList = copyObj.toList :+ toObj
-        }
-      }
-    }
+    copyNode => copyList = copyList :+ Copy(copyNode)
   }
 }
 
