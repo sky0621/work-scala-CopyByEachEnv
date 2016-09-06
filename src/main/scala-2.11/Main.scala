@@ -7,9 +7,6 @@ import config.{Config, ConfigParser}
   */
 object Main extends App {
 
-  // コピー設定に応じたコピーロジックを実装
-  // コピーの開始（終了？）をメッセージとしてやりとりするAkkaのアクターロジックを実装
-
   val config: Config = ConfigParser().generateConfig()
 
   val system = ActorSystem("copySystem")

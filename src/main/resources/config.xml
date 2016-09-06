@@ -9,12 +9,12 @@
             <dir>sample\\to01\\</dir>
             <file>sample.properties</file>
             <convert>
-                <from>value2</from>
-                <to>value1</to>
+                <from>returnPath=returnPath@example.jp</from>
+                <to>returnPath=convert@example.jp</to>
             </convert>
             <convert>
-                <from>key2</from>
-                <to>key1</to>
+                <from>textTemplate.encoding=UTF-8</from>
+                <to>textTemplate.encoding=SJIS</to>
             </convert>
         </to>
         <to>
@@ -31,8 +31,8 @@
             <dir>sample\\to01\\</dir>
             <file>sample.properties</file>
             <convert>
-                <from>value2</from>
-                <to>value1</to>
+                <from>returnPath=returnPath@example.jp</from>
+                <to>returnPath=convert2@example.jp</to>
             </convert>
         </to>
     </copy>
