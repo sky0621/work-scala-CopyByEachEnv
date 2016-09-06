@@ -8,7 +8,6 @@ import scala.xml.NodeSeq
 class CopyTo private(toNode: NodeSeq) {
 
   val dir: String = (toNode \ "dir").text
-
   val file: String = (toNode \ "file").text
 
   var convertList: List[Convert] = List()
