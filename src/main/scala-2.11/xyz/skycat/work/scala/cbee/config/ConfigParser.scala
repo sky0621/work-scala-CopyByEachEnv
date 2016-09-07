@@ -5,10 +5,12 @@ import scala.xml.XML
 /**
   * Created by SS on 2016/09/06.
   */
-class ConfigParser {
-  def generateConfig() = Config(XML.loadFile("src/main/resources/config.xml"))
-}
-
-object ConfigParser {
-  def apply() = new ConfigParser
+case class ConfigParser private(path: String) {
+  def generateConfig() = {
+    if(path == null) {
+      Config(XML.loadFile("src/main/resources/config.xml"))
+    } else {
+      Config(XML.loadFile(path))
+    }
+  }
 }

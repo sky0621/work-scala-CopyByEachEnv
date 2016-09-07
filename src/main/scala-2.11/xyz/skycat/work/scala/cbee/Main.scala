@@ -8,7 +8,7 @@ import xyz.skycat.work.scala.cbee.config.{Config, ConfigParser}
   */
 object Main extends App {
 
-  val config: Config = ConfigParser().generateConfig()
+  val config: Config = ConfigParser(args(0)).generateConfig
   val system = ActorSystem("copySystem")
 
   var actorList = List[ActorRef]()
