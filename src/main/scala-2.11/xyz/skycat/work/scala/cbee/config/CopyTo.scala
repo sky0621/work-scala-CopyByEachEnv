@@ -1,6 +1,7 @@
 package xyz.skycat.work.scala.cbee.config
 
 import scala.xml.NodeSeq
+import scalax.file.Path
 
 /**
   * Created by SS on 2016/09/06.
@@ -14,4 +15,9 @@ case class CopyTo private(toNode: NodeSeq) {
   (toNode \ "convert").foreach {
     to => convertList = convertList :+ Convert(to)
   }
+
+  def toAbsolutePath(): Path = Path(dir + file).toAbsolute
+
+  def toTmpAbsolutePath(): Path = Path(dir + file + ".tmp").toAbsolute
+
 }
